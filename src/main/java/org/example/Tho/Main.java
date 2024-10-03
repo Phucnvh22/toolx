@@ -11,10 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        User user1 = new User("EvitaMock37227", "iN5KtUOoyd0g", "31!fj5-h--03m!o64-6rq@mailforspam.com", "https://ads.x.com/composer/18ce55lys3q/carousel");
+        User user1 = new User("UrreyA77612", "dVs4iUe1CHz", "franzengeorgette1306@hotmail.com", "https://ads.x.com/composer/18ce55na57k/carousel");
 
         AutoPost autoPost = new AutoPost();
-        List<String> urlList = autoPost.autoPost("1", user1);
+        List<String> urlList = autoPost.autoPost("4", user1);
 
 
         ShareAuto shareAuto = new ShareAuto();
@@ -38,27 +38,7 @@ public class Main {
                 e.printStackTrace();
             }
         });
-        executor.submit(() -> {
-            try {
-                shareAuto.autoShare(urlList, "4");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-        executor.submit(() -> {
-            try {
-                shareAuto.autoShare(urlList, "5");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-        executor.submit(() -> {
-            try {
-                shareAuto.autoShare(urlList, "6");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
+
 
         // Tắt ExecutorService
         executor.shutdown();

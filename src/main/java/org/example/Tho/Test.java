@@ -17,10 +17,10 @@ public class Test {
     private static Actions actions;
 
     public static void main(String[] args) {
-        String chromeDriverPath = "C:\\Users\\ACER\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe";
+        String chromeDriverPath = "C:\\Users\\Admin\\Downloads\\chromedriver-win64\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-        String userDataDir = "C:\\Users\\ACER\\AppData\\Local\\Google\\Chrome\\User Data\\User 6";
+        String userDataDir = "C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\Profile  ";
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("user-data-dir=" + userDataDir);
