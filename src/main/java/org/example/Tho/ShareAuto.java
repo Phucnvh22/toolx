@@ -15,10 +15,13 @@ public class ShareAuto extends Test{
     private final Random random = new Random();
 
     public void autoShare(List<String> urlList, String number) throws InterruptedException {
-        String chromeDriverPath = "C:\\Users\\Admin\\Downloads\\chromedriver-win64\\chromedriver.exe";
+        //String chromeDriverPath = "C:\\Users\\Admin\\Downloads\\chromedriver-win64\\chromedriver.exe"; //Tho
+        String chromeDriverPath = "C:\\Users\\ACER\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-        String data = "C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\Profile  ";
+        //String data = "C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\Profile";
+        String data = "C:\\Users\\ACER\\AppData\\Local\\Google\\Chrome\\User Data\\User ";
+
         String userDataDir = data + number;
 
         ChromeOptions options = new ChromeOptions();

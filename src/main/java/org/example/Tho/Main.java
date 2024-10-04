@@ -11,10 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        User user1 = new User("UrreyA77612", "dVs4iUe1CHz", "franzengeorgette1306@hotmail.com", "https://ads.x.com/composer/18ce55na57k/carousel");
+        User user1 = new User("UrreyA77612", "dVs4iUe1CHz", "franzengeorgette1306@hotmail.com", "https://ads.x.com/composer/18ce55lys3q/carousel");
 
         AutoPost autoPost = new AutoPost();
-        List<String> urlList = autoPost.autoPost("4", user1);
+        List<String> urlList = autoPost.autoPost("1", user1);
 
 
         ShareAuto shareAuto = new ShareAuto();
