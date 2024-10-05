@@ -85,7 +85,7 @@ public class AutoPost extends Test {
                 randomDelay();
 
                 WebElement sub = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".TweetTextInput-editor.is-empty")));
-                int a = random.nextInt(9000) + 1000;
+                int a = random.nextInt(90000) + 1000;
                 sub.sendKeys("Episode  " + a);
 
                 randomDelay();
