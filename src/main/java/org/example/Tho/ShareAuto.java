@@ -39,13 +39,13 @@ public class ShareAuto extends Test{
                 randomWait(); // Thêm thời gian chờ ngẫu nhiên
                 System.out.println("Accessing: " + url);
 
-                // Cuộn trang ngẫu nhiên
-                randomScroll(driver);
+
 
                 // Thực hiện các hành động trên bài đăng
                 clickElement(wait, driver, By.cssSelector("[data-testid='like']"));
 
                 clickElement(wait, driver, By.cssSelector("[data-testid='retweet']"));
+                randomWait();
 
                 clickElement(wait, driver, By.xpath("//*[contains(text(), 'Đăng lại') or contains(text(), 'Repost')]"));
                 System.out.println(" đã click được vào nút đăng lại");
@@ -73,8 +73,6 @@ public class ShareAuto extends Test{
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
             // Thêm thời gian chờ ngẫu nhiên
-            randomWait();
-
             // Chờ phần tử có thể click và click vào nó
             wait.until(ExpectedConditions.elementToBeClickable(element)).click();
         } catch (Exception e) {

@@ -41,12 +41,20 @@ public class Main {
 
         List<String> urlList = autoPost.autoPost(String.valueOf(choice), selectedUser);
 
-        ShareAuto shareAuto = new ShareAuto();
-
-            // Tạo một ExecutorService với 2 luồng
-            ExecutorService executor = Executors.newFixedThreadPool(5);
+       ShareAuto shareAuto = new ShareAuto();
+//        String link1 = "";
+//        String link2 = "";
+//        String link3 = "";
+//
+//        List<String> urlList = new ArrayList<>();
+//        urlList.add(link1);
+//        urlList.add(link2);
+//        urlList.add(link3);
+//            // Tạo một ExecutorService với 2 luồng
+            ExecutorService executor = Executors.newFixedThreadPool(10);
 
             // Gửi hai nhiệm vụ autoShare để thực hiện đồng thời
+
 
             executor.submit(() -> {
                 try {
@@ -64,21 +72,15 @@ public class Main {
                 }
             });
 
-            executor.submit(() -> {
-                try {
-                    shareAuto.autoShare(urlList, "4");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
 
-            executor.submit(() -> {
-                try {
-                    shareAuto.autoShare(urlList, "5");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
+        executor.submit(() -> {
+            try {
+                shareAuto.autoShare(urlList, "5");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
 
 
             // Tắt ExecutorService

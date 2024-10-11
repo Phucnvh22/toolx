@@ -69,7 +69,7 @@ public class AutoPost extends Test {
                 }
                 fileInput.sendKeys(filePath);
                 randomDelay();
-                Thread.sleep(10000);
+
 
                 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[contains(@aria-label, 'Loading')]")));
 
