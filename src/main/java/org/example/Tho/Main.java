@@ -39,7 +39,7 @@ public class Main {
         User selectedUser = userList.get(i);
         System.out.println("Bạn đã chọn người dùng: " + selectedUser.getUsername());
 
-        List<String> urlList = autoPost.autoPost(String.valueOf(choice), selectedUser);
+        List<String> urlList = autoPost.autoPost(String.valueOf(choice), selectedUser, "198.23.239.134");
 
        ShareAuto shareAuto = new ShareAuto();
 //        String link1 = "";

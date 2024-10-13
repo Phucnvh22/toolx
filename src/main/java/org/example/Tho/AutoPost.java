@@ -15,7 +15,7 @@ import java.util.Random;
 import java.util.Set;
 
 public class AutoPost extends Test {
-    public List<String> autoPost(String number, User user) {
+    public List<String> autoPost(String number, User user, String ip) {
         Random random = new Random();
         String linkShare = "";
         List<String> urlList = new ArrayList<>();
@@ -34,6 +34,12 @@ public class AutoPost extends Test {
             options.addArguments("--no-first-run");
             options.addArguments("--no-default-browser-check");
             options.addArguments("--disable-notifications");
+
+            // Thêm cấu hình proxy
+            Proxy proxy = new Proxy();
+            proxy.setHttpProxy(ip);
+            proxy.setSslProxy(ip);
+            options.setCapability("proxy", proxy);
 
             driver = new ChromeDriver(options);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
