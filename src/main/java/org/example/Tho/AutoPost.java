@@ -15,17 +15,17 @@ import java.util.Random;
 import java.util.Set;
 
 public class AutoPost extends Test {
-    public List<String> autoPost(String number, User user, String ip) {
+    public List<String> autoPost(String number, User user) {
         Random random = new Random();
         String linkShare = "";
         List<String> urlList = new ArrayList<>();
         WebDriver driver = null;
         try {
             // String chromeDriverPath = "C:\\Users\\Admin\\Downloads\\chromedriver-win64\\chromedriver.exe"; //Tho
-            String chromeDriverPath = "C:\\Users\\ACER\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe";
+            String chromeDriverPath = "D:\\DriverChrome\\chromedriver-win64\\chromedriver.exe";
             System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-            String data = "C:\\Users\\ACER\\AppData\\Local\\Google\\Chrome\\User Data\\User ";
+            String data = "C:\\Users\\PC\\AppData\\Local\\Google\\Chrome\\User Data\\User ";
            //String data = "C:\\Users\\Admin\\AppData\\Local\\Google\\Chrome\\User Data\\Profile "; //Tho
             String userDataDir = data + number;
 
@@ -35,11 +35,11 @@ public class AutoPost extends Test {
             options.addArguments("--no-default-browser-check");
             options.addArguments("--disable-notifications");
 
-            // Thêm cấu hình proxy
-            Proxy proxy = new Proxy();
-            proxy.setHttpProxy(ip);
-            proxy.setSslProxy(ip);
-            options.setCapability("proxy", proxy);
+             //Thêm cấu hình proxy
+//            Proxy proxy = new Proxy();
+//            proxy.setHttpProxy(ip);
+//            proxy.setSslProxy(ip);
+//            options.setCapability("proxy", proxy);
 
             driver = new ChromeDriver(options);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -65,16 +65,17 @@ public class AutoPost extends Test {
                 WebElement fileInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[type='file']")));
                 String filePath;
                 if (i < 2) {
-                    int video = random.nextInt(4);
-                    filePath = "C:\\Users\\ACER\\Downloads\\" + (video + 1) + ".mp4";
+                    int video = random.nextInt(26);
+                    filePath = "C:\\Users\\PC\\Downloads\\videoX\\" + (video + 1) + ".mp4";
                     System.out.println("Đã chọn video số " + (video + 1));
                 } else {
-                    int image = random.nextInt(2);
-                    filePath = "C:\\Users\\ACER\\Downloads\\anh\\" + (image + 1) + ".PNG";
+                    int image = random.nextInt(26);
+                    filePath = "C:\\Users\\PC\\Downloads\\videoX" + (image + 1) + ".PNG";
                     System.out.println("Đã chọn ảnh số " + (image + 1));
                 }
                 fileInput.sendKeys(filePath);
                 randomDelay();
+                Thread.sleep(5000);
 
 
                 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[contains(@aria-label, 'Loading')]")));
@@ -108,7 +109,7 @@ public class AutoPost extends Test {
 
                 WebElement link = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@placeholder='https://']")));
                 wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
-                String linkUrl = (i < 2) ? "https://masaribananaae.blogspot.com" : "https://sawanicatiis15ssaea.blogspot.com/";
+                String linkUrl = (i < 2) ? "https://explainplaysettwisting.com/2039791" : "https://explainplaysettwisting.com/2039791";
                 Test.typeHumanLikeWithMistakes(link, linkUrl);
 
                 randomDelay();
